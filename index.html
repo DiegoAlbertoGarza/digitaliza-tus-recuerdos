@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitaliza tus Recuerdos - Diego Garza</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section-title {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(238, 90, 36, 0.3);
+        }
+        
+        .highlight-box h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        tbody tr:hover {
+            background: #e9ecef;
+            transition: background 0.3s;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        
+        .savings {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .features {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .feature-icon {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .contact-section h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-item strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .contact-item span {
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+        
+        .free-sample {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📸 Digitaliza tus Recuerdos</h1>
+            <p>Servicio Profesional de Escaneo y Organización de Fotos</p>
+            <p style="margin-top: 10px; font-size: 1em; opacity: 0.8;">por Diego Garza</p>
+        </div>
+        
+        <div class="content">
+            <!-- DIFERENCIADOR PRINCIPAL -->
+            <div class="highlight-box">
+                <h3>✨ ¿Qué me hace diferente?</h3>
+                <p>No solo escaneo tus fotos: <strong>las organizo por fechas</strong> directamente en tu iPhone o Android, listas para ver en tu Fototeca como si siempre hubieran estado digitales</p>
+            </div>
+            
+            <h2 class="section-title">💰 Precios Individuales</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cantidad</th>
+                        <th>Precio por foto</th>
+                        <th>Total estimado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1-10 fotos</td>
+                        <td class="price">$6 MXN</td>
+                        <td>$6 - $60</td>
+                    </tr>
+                    <tr>
+                        <td>11-25 fotos</td>
+                        <td class="price">$5 MXN</td>
+                        <td>$55 - $125</td>
+                    </tr>
+                    <tr>
+                        <td>26-50 fotos</td>
+                        <td class="price">$4.50 MXN</td>
+                        <td>$117 - $225</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 class="section-title">🎁 Combos con Descuento</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Combo</th>
+                        <th>Fotos incluidas</th>
+                        <th>Precio</th>
+                        <th>Ahorro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Básico</strong></td>
+                        <td>50 fotos</td>
+                        <td class="price">$225 MXN</td>
+                        <td class="savings">$50 (18% off)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Familiar</strong></td>
+                        <td>100 fotos</td>
+                        <td class="price">$400 MXN</td>
+                        <td class="savings">$150 (27% off)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Álbum Completo</strong></td>
+                        <td>250 fotos</td>
+                        <td class="price">$875 MXN</td>
+                        <td class="savings">$500 (36% off)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Colección Total</strong></td>
+                        <td>500 fotos</td>
+                        <td class="price">$1,500 MXN</td>
+                        <td class="savings">$1,300 (46% off)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 class="section-title">✨ Servicio Completo Incluye</h2>
+            <div class="features">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Escaneo alta resolución (300-600 DPI)</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span><strong>Fechas organizadas en tu celular</strong> (iPhone/Android)</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Entrega en USB o Google Drive</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Corrección básica de color y brillo</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Organización por carpetas (año/evento)</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Formato JPG o PNG a elegir</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-section">
+                <h3>📞 Contáctame</h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <strong>WhatsApp/Teléfono</strong>
+                        <span>+52 844-461-3073</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email</strong>
+                        <span>diegoalbertogarzagarcia@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Instagram</strong>
+                        <span>@dieegogarzaa_</span>
+                    </div>
+                </div>
+                <div class="free-sample">
+                    🎁 ¡Muestra gratis: escaneo de 3 fotos de prueba sin costo!
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
